@@ -21,7 +21,7 @@ environment {
         stage("test"){
             steps{
                 echo "----------- unit test started ----------"
-                sh 'cd DevOps-Project-06 && mvn test'
+               sh 'cd DevOps-Project-06 && mvn test -DforkCount=0'
                  echo "----------- unit test Complted ----------"
             }
         }
@@ -32,7 +32,7 @@ environment {
         }
             steps{
             withSonarQubeEnv('satish-sonarqube-server') { // If you have configured more than one global server connection, you can specify its name
-              sh "${scannerHome}/bin/sonar-scanner"
+              sh "cd DevOps-Project-06 && ${scannerHome}/bin/sonar-scanner"
             }
             }
         }
