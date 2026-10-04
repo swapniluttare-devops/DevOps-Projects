@@ -21,7 +21,7 @@ environment {
         stage("test"){
             steps{
                 echo "----------- unit test started ----------"
-                sh 'mvn surefire-report:report'
+                sh 'cd DevOps-Project-06 && mvn test'
                  echo "----------- unit test Complted ----------"
             }
         }
