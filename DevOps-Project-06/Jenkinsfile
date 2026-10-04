@@ -14,7 +14,7 @@ environment {
         stage("build"){
             steps {
                  echo "----------- build started ----------"
-                sh 'mvn clean deploy -Dmaven.test.skip=true'
+                sh 'cd DevOps-Project-06 && mvn clean deploy -Dmaven.test.skip=true'
                  echo "----------- build complted ----------"
             }
         }
